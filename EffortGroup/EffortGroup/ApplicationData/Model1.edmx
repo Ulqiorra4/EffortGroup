@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище EffortGroupModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Computers">
+          <Key>
+            <PropertyRef Name="IdComp" />
+          </Key>
+          <Property Name="IdComp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Model" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdEmp" Type="int" />
+          <Property Name="PhotoComp" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Departments">
+          <Key>
+            <PropertyRef Name="IdDep" />
+          </Key>
+          <Property Name="IdDep" Type="int" Nullable="false" />
+          <Property Name="DepName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DeviceRepare">
+          <Key>
+            <PropertyRef Name="IdRep" />
+          </Key>
+          <Property Name="IdRep" Type="int" Nullable="false" />
+          <Property Name="IdComp" Type="int" />
+          <Property Name="IdPer" Type="int" />
+          <Property Name="StartDataRep" Type="date" />
+          <Property Name="EndDataRep" Type="date" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="IdEmp" />
+          </Key>
+          <Property Name="IdEmp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PassNumb" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PassSeries" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdDep" Type="int" Nullable="false" />
+          <Property Name="Post" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PhotoPath" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Peripherals">
+          <Key>
+            <PropertyRef Name="IdPer" />
+          </Key>
+          <Property Name="IdPer" Type="int" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NamePer" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IdComp" Type="int" />
+          <Property Name="PhotoPer" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="IdRole" />
+          </Key>
+          <Property Name="IdRole" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="IdUser" />
+          </Key>
+          <Property Name="IdUser" Type="int" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdRole" Type="int" Nullable="false" />
+          <Property Name="IdEmp" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Computers_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Computers" Type="Self.Computers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="IdEmp" />
+            </Principal>
+            <Dependent Role="Computers">
+              <PropertyRef Name="IdEmp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DeviceRepare_Computers">
+          <End Role="Computers" Type="Self.Computers" Multiplicity="0..1" />
+          <End Role="DeviceRepare" Type="Self.DeviceRepare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Computers">
+              <PropertyRef Name="IdComp" />
+            </Principal>
+            <Dependent Role="DeviceRepare">
+              <PropertyRef Name="IdComp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DeviceRepare_Peripherals">
+          <End Role="Peripherals" Type="Self.Peripherals" Multiplicity="0..1" />
+          <End Role="DeviceRepare" Type="Self.DeviceRepare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Peripherals">
+              <PropertyRef Name="IdPer" />
+            </Principal>
+            <Dependent Role="DeviceRepare">
+              <PropertyRef Name="IdPer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Departments">
+          <End Role="Departments" Type="Self.Departments" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departments">
+              <PropertyRef Name="IdDep" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="IdDep" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Peripherals_Computers">
+          <End Role="Computers" Type="Self.Computers" Multiplicity="0..1" />
+          <End Role="Peripherals" Type="Self.Peripherals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Computers">
+              <PropertyRef Name="IdComp" />
+            </Principal>
+            <Dependent Role="Peripherals">
+              <PropertyRef Name="IdComp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="IdEmp" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="IdEmp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="IdRole" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="IdRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище EffortGroupModelContainer">
+          <EntitySet Name="Computers" EntityType="Self.Computers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DeviceRepare" EntityType="Self.DeviceRepare" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Peripherals" EntityType="Self.Peripherals" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Computers_Employee" Association="Self.FK_Computers_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Computers" EntitySet="Computers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DeviceRepare_Computers" Association="Self.FK_DeviceRepare_Computers">
+            <End Role="Computers" EntitySet="Computers" />
+            <End Role="DeviceRepare" EntitySet="DeviceRepare" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DeviceRepare_Peripherals" Association="Self.FK_DeviceRepare_Peripherals">
+            <End Role="Peripherals" EntitySet="Peripherals" />
+            <End Role="DeviceRepare" EntitySet="DeviceRepare" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Departments" Association="Self.FK_Employee_Departments">
+            <End Role="Departments" EntitySet="Departments" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Peripherals_Computers" Association="Self.FK_Peripherals_Computers">
+            <End Role="Computers" EntitySet="Computers" />
+            <End Role="Peripherals" EntitySet="Peripherals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Employee" Association="Self.FK_User_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EffortGroupModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Computers">
+          <Key>
+            <PropertyRef Name="IdComp" />
+          </Key>
+          <Property Name="IdComp" Type="Int32" Nullable="false" />
+          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdEmp" Type="Int32" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Computers_Employee" FromRole="Computers" ToRole="Employee" />
+          <NavigationProperty Name="DeviceRepare" Relationship="Self.FK_DeviceRepare_Computers" FromRole="Computers" ToRole="DeviceRepare" />
+          <NavigationProperty Name="Peripherals" Relationship="Self.FK_Peripherals_Computers" FromRole="Computers" ToRole="Peripherals" />
+          <Property Name="PhotoComp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Departments">
+          <Key>
+            <PropertyRef Name="IdDep" />
+          </Key>
+          <Property Name="IdDep" Type="Int32" Nullable="false" />
+          <Property Name="DepName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_Departments" FromRole="Departments" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="DeviceRepare">
+          <Key>
+            <PropertyRef Name="IdRep" />
+          </Key>
+          <Property Name="IdRep" Type="Int32" Nullable="false" />
+          <Property Name="IdComp" Type="Int32" />
+          <Property Name="IdPer" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Computers" Relationship="Self.FK_DeviceRepare_Computers" FromRole="DeviceRepare" ToRole="Computers" />
+          <NavigationProperty Name="Peripherals" Relationship="Self.FK_DeviceRepare_Peripherals" FromRole="DeviceRepare" ToRole="Peripherals" />
+          <Property Name="StartDataRep" Type="DateTime" Precision="0" />
+          <Property Name="EndDataRep" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="IdEmp" />
+          </Key>
+          <Property Name="IdEmp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PassNumb" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PassSeries" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IdDep" Type="Int32" Nullable="false" />
+          <Property Name="Post" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PhotoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Computers" Relationship="Self.FK_Computers_Employee" FromRole="Employee" ToRole="Computers" />
+          <NavigationProperty Name="Departments" Relationship="Self.FK_Employee_Departments" FromRole="Employee" ToRole="Departments" />
+          <NavigationProperty Name="User" Relationship="Self.FK_User_Employee" FromRole="Employee" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Peripherals">
+          <Key>
+            <PropertyRef Name="IdPer" />
+          </Key>
+          <Property Name="IdPer" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdComp" Type="Int32" />
+          <NavigationProperty Name="Computers" Relationship="Self.FK_Peripherals_Computers" FromRole="Peripherals" ToRole="Computers" />
+          <NavigationProperty Name="DeviceRepare" Relationship="Self.FK_DeviceRepare_Peripherals" FromRole="Peripherals" ToRole="DeviceRepare" />
+          <Property Name="NamePer" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhotoPer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="IdRole" />
+          </Key>
+          <Property Name="IdRole" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_User_Role" FromRole="Role" ToRole="User" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="IdUser" />
+          </Key>
+          <Property Name="IdUser" Type="Int32" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdRole" Type="Int32" Nullable="false" />
+          <Property Name="IdEmp" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_User_Employee" FromRole="User" ToRole="Employee" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
+        </EntityType>
+        <Association Name="FK_Computers_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Computers" Type="Self.Computers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="IdEmp" />
+            </Principal>
+            <Dependent Role="Computers">
+              <PropertyRef Name="IdEmp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DeviceRepare_Computers">
+          <End Role="Computers" Type="Self.Computers" Multiplicity="0..1" />
+          <End Role="DeviceRepare" Type="Self.DeviceRepare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Computers">
+              <PropertyRef Name="IdComp" />
+            </Principal>
+            <Dependent Role="DeviceRepare">
+              <PropertyRef Name="IdComp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Peripherals_Computers">
+          <End Role="Computers" Type="Self.Computers" Multiplicity="0..1" />
+          <End Role="Peripherals" Type="Self.Peripherals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Computers">
+              <PropertyRef Name="IdComp" />
+            </Principal>
+            <Dependent Role="Peripherals">
+              <PropertyRef Name="IdComp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Departments">
+          <End Role="Departments" Type="Self.Departments" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departments">
+              <PropertyRef Name="IdDep" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="IdDep" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DeviceRepare_Peripherals">
+          <End Role="Peripherals" Type="Self.Peripherals" Multiplicity="0..1" />
+          <End Role="DeviceRepare" Type="Self.DeviceRepare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Peripherals">
+              <PropertyRef Name="IdPer" />
+            </Principal>
+            <Dependent Role="DeviceRepare">
+              <PropertyRef Name="IdPer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="IdEmp" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="IdEmp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="IdRole" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="IdRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EffortGroupEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Computers" EntityType="Self.Computers" />
+          <EntitySet Name="Departments" EntityType="Self.Departments" />
+          <EntitySet Name="DeviceRepare" EntityType="Self.DeviceRepare" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" />
+          <EntitySet Name="Peripherals" EntityType="Self.Peripherals" />
+          <EntitySet Name="Role" EntityType="Self.Role" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <AssociationSet Name="FK_Computers_Employee" Association="Self.FK_Computers_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Computers" EntitySet="Computers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DeviceRepare_Computers" Association="Self.FK_DeviceRepare_Computers">
+            <End Role="Computers" EntitySet="Computers" />
+            <End Role="DeviceRepare" EntitySet="DeviceRepare" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Peripherals_Computers" Association="Self.FK_Peripherals_Computers">
+            <End Role="Computers" EntitySet="Computers" />
+            <End Role="Peripherals" EntitySet="Peripherals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Departments" Association="Self.FK_Employee_Departments">
+            <End Role="Departments" EntitySet="Departments" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DeviceRepare_Peripherals" Association="Self.FK_DeviceRepare_Peripherals">
+            <End Role="Peripherals" EntitySet="Peripherals" />
+            <End Role="DeviceRepare" EntitySet="DeviceRepare" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Employee" Association="Self.FK_User_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище EffortGroupModelContainer" CdmEntityContainer="EffortGroupEntities">
+          <EntitySetMapping Name="Computers">
+            <EntityTypeMapping TypeName="EffortGroupModel.Computers">
+              <MappingFragment StoreEntitySet="Computers">
+                <ScalarProperty Name="PhotoComp" ColumnName="PhotoComp" />
+                <ScalarProperty Name="IdComp" ColumnName="IdComp" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="IdEmp" ColumnName="IdEmp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="EffortGroupModel.Departments">
+              <MappingFragment StoreEntitySet="Departments">
+                <ScalarProperty Name="IdDep" ColumnName="IdDep" />
+                <ScalarProperty Name="DepName" ColumnName="DepName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DeviceRepare">
+            <EntityTypeMapping TypeName="EffortGroupModel.DeviceRepare">
+              <MappingFragment StoreEntitySet="DeviceRepare">
+                <ScalarProperty Name="EndDataRep" ColumnName="EndDataRep" />
+                <ScalarProperty Name="StartDataRep" ColumnName="StartDataRep" />
+                <ScalarProperty Name="IdRep" ColumnName="IdRep" />
+                <ScalarProperty Name="IdComp" ColumnName="IdComp" />
+                <ScalarProperty Name="IdPer" ColumnName="IdPer" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee">
+            <EntityTypeMapping TypeName="EffortGroupModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="IdEmp" ColumnName="IdEmp" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="PassNumb" ColumnName="PassNumb" />
+                <ScalarProperty Name="PassSeries" ColumnName="PassSeries" />
+                <ScalarProperty Name="IdDep" ColumnName="IdDep" />
+                <ScalarProperty Name="Post" ColumnName="Post" />
+                <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Peripherals">
+            <EntityTypeMapping TypeName="EffortGroupModel.Peripherals">
+              <MappingFragment StoreEntitySet="Peripherals">
+                <ScalarProperty Name="PhotoPer" ColumnName="PhotoPer" />
+                <ScalarProperty Name="NamePer" ColumnName="NamePer" />
+                <ScalarProperty Name="IdPer" ColumnName="IdPer" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="IdComp" ColumnName="IdComp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="EffortGroupModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="EffortGroupModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="EffortGroupModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+                <ScalarProperty Name="IdEmp" ColumnName="IdEmp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

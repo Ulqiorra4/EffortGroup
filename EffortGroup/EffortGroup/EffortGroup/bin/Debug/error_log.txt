@@ -1,0 +1,12 @@
+31.01.2025 13:01:48: При обновлении записей возникла ошибка. Дополнительные сведения приведены во внутреннем исключении.
+Внутреннее исключение: При обновлении записей возникла ошибка. Дополнительные сведения приведены во внутреннем исключении.
+Стек вызовов:    в System.Data.Entity.Internal.InternalContext.SaveChanges()
+   в System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   в System.Data.Entity.DbContext.SaveChanges()
+   в EffortGroup.PageAddPer.Add_Click(Object sender, RoutedEventArgs e) в E:\EffortGroup\EffortGroup\EffortGroup\Admin\PageAddPer.xaml.cs:строка 110
+31.01.2025 13:01:52: При обновлении записей возникла ошибка. Дополнительные сведения приведены во внутреннем исключении.
+Внутреннее исключение: При обновлении записей возникла ошибка. Дополнительные сведения приведены во внутреннем исключении.
+Стек вызовов:    в System.Data.Entity.Internal.InternalContext.SaveChanges()
+   в System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   в System.Data.Entity.DbContext.SaveChanges()
+   в EffortGroup.PageAddPer.Add_Click(Object sender, RoutedEventArgs e) в E:\EffortGroup\EffortGroup\EffortGroup\Admin\PageAddPer.xaml.cs:строка 110

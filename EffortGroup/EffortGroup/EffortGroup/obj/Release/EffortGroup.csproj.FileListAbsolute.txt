@@ -1,0 +1,100 @@
+E:\EffortGroup\EffortGroup\EffortGroup\bin\Release\EffortGroup.exe.config
+E:\EffortGroup\EffortGroup\EffortGroup\bin\Release\EffortGroup.exe.manifest
+E:\EffortGroup\EffortGroup\EffortGroup\bin\Release\EffortGroup.application
+E:\EffortGroup\EffortGroup\EffortGroup\bin\Release\EffortGroup.exe
+E:\EffortGroup\EffortGroup\EffortGroup\bin\Release\EffortGroup.pdb
+E:\EffortGroup\EffortGroup\EffortGroup\bin\Release\EntityFramework.dll
+E:\EffortGroup\EffortGroup\EffortGroup\bin\Release\EntityFramework.SqlServer.dll
+E:\EffortGroup\EffortGroup\EffortGroup\bin\Release\EntityFramework.xml
+E:\EffortGroup\EffortGroup\EffortGroup\bin\Release\EntityFramework.SqlServer.xml
+E:\EffortGroup\EffortGroup\EffortGroup\bin\Release\ru\EntityFramework.resources.dll
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGroup.csproj.AssemblyReference.cache
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\Resource\Style.baml
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\Admin\EditEmployeeWindow.g.cs
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\Admin\PageScrAdm.g.cs
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\Add\PageAddComp.g.cs
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\Add\PageAddEmp.g.cs
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\Admin\PageAdmin.g.cs
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\Edit\PageEditPer.g.cs
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\Employee\PageScrEmp.g.cs
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\Login\PageLogin.g.cs
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\MainWindow.g.cs
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\Add\PageAddPer.g.cs
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\Edit\PageEditComp.g.cs
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\Employee\PageEmployee.g.cs
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\App.g.cs
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGroup_Content.g.cs
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGroup_MarkupCompile.cache
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGroup_MarkupCompile.lref
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\App.baml
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\Admin\EditEmployeeWindow.baml
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\Admin\PageScrAdm.baml
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\Add\PageAddComp.baml
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\Add\PageAddEmp.baml
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\Admin\PageAdmin.baml
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\Edit\PageEditPer.baml
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\Employee\PageScrEmp.baml
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\Login\PageLogin.baml
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\MainWindow.baml
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\Add\PageAddPer.baml
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\Edit\PageEditComp.baml
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\Employee\PageEmployee.baml
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGroup.g.resources
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGroup.Properties.Resources.resources
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGroup.csproj.GenerateResource.cache
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGroup.csproj.CoreCompileInputs.cache
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGroup.exe.manifest
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGroup.application
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGr.B9FC342F.Up2Date
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGroup.exe
+E:\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGroup.pdb
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\bin\Release\EffortGroup.exe.config
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\bin\Release\EffortGroup.exe.manifest
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\bin\Release\EffortGroup.application
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\bin\Release\EffortGroup.exe
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\bin\Release\EffortGroup.pdb
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\bin\Release\EntityFramework.dll
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\bin\Release\EntityFramework.SqlServer.dll
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\bin\Release\EntityFramework.xml
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\bin\Release\EntityFramework.SqlServer.xml
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\bin\Release\ru\EntityFramework.resources.dll
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGroup.csproj.AssemblyReference.cache
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\Resource\Style.baml
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\Admin\EditEmployeeWindow.g.cs
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\Admin\PageScrAdm.g.cs
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\Add\PageAddComp.g.cs
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\Add\PageAddEmp.g.cs
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\Admin\PageAdmin.g.cs
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\Edit\PageEditPer.g.cs
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\Employee\PageScrEmp.g.cs
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\Login\PageLogin.g.cs
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\MainWindow.g.cs
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\Add\PageAddPer.g.cs
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\Edit\PageEditComp.g.cs
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\Employee\PageEmployee.g.cs
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\App.g.cs
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGroup_Content.g.cs
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGroup_MarkupCompile.cache
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGroup_MarkupCompile.lref
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\App.baml
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\Admin\EditEmployeeWindow.baml
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\Admin\PageScrAdm.baml
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\Add\PageAddComp.baml
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\Add\PageAddEmp.baml
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\Admin\PageAdmin.baml
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\Edit\PageEditPer.baml
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\Employee\PageScrEmp.baml
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\Login\PageLogin.baml
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\MainWindow.baml
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\Add\PageAddPer.baml
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\Edit\PageEditComp.baml
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\Employee\PageEmployee.baml
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGroup.g.resources
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGroup.Properties.Resources.resources
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGroup.csproj.GenerateResource.cache
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGroup.csproj.CoreCompileInputs.cache
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGroup.exe.manifest
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGroup.application
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGr.B9FC342F.Up2Date
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGroup.exe
+D:\EffortGroup (2)\EffortGroup\EffortGroup\EffortGroup\obj\Release\EffortGroup.pdb

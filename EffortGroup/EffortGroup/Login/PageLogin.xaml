@@ -1,0 +1,36 @@
+﻿<Page x:Class="EffortGroup.Login.PageLogin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:EffortGroup.Login"
+      mc:Ignorable="d"
+      Title="Авторизация"
+      Height="720" Width="1024"
+      WindowHeight="500">
+
+    <Grid>
+        <Image x:Name="Logo" MouseLeftButtonUp="LogoHyperlink_Click" Source="/Images/Logo.png" Width="310" Margin="360,40,354,492"
+    Cursor="Hand" />
+
+        <StackPanel Margin="358,192,356,194" Width="310">
+            <Grid Margin="5, 40, 5, 0">
+                <!-- Placeholder style from example 2 -->
+                <TextBox x:Name="Login" Width="300" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                         Height="60" GotFocus="Login_GotFocus" LostFocus="Login_LostFocus"/>
+                <TextBlock Text="Логин" Style="{StaticResource TextBlockStyle}" VerticalAlignment="Center"
+                           IsHitTestVisible="False" x:Name="LoginPlaceholder"/>
+            </Grid>
+            <Grid Margin="5, 40, 5, 20">
+                <!-- Placeholder style from example 2 -->
+                <PasswordBox x:Name="Password" HorizontalAlignment="Center" Width="300" Height="60" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                             GotFocus="Password_GotFocus" LostFocus="Password_LostFocus"/>
+                <TextBlock Text="Пароль" Style="{StaticResource TextBlockStyle}" VerticalAlignment="Center"
+                           IsHitTestVisible="False" x:Name="PasswordPlaceholder"/>
+            </Grid>
+        </StackPanel>
+
+        <Button Margin="20" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="1" Click="ExitButton_Click" Style="{StaticResource ExitButtonStyle}" />
+        <Button Name="Enter" HorizontalAlignment="Left" Content="Войти" Width="250" Height="50" VerticalAlignment="Top" Margin="390,476,0,0" Style="{StaticResource ButtonLog}" Click="Enter_Click"/>
+    </Grid>
+</Page>
